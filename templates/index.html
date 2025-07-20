@@ -201,7 +201,7 @@
                         let lastIndex = 0;
                         while ((lastIndex = buffer.indexOf('\n\n')) !== -1) {
                             const message = buffer.substring(0, lastIndex).trim();
-                            console.log(message)
+                            // console.log(message)
                             buffer = buffer.substring(lastIndex + 2);
 
                             if (message.startsWith('data: ')) {
@@ -215,11 +215,11 @@
                                 // 尝试从原始文本中匹配坐标
                                 const data_str = data.replace(ansiEscapeCodesRegex, '');
                                 const match = data_str.match(coordRegex);
-                                console.log(match)
+                                // console.log(match)
                                 if (match) {
                                     const lat = parseFloat(match[1]);
                                     const lon = parseFloat(match[2]);
-                                    console.log(lat,lon)
+                                    // console.log(lat,lon)
 
                                     // 过滤掉无效的 (0.00,0.00) 坐标
                                     if (lat !== 0.00 && lon !== 0.00) {

@@ -45,7 +45,7 @@ export function addPathPoint(lat, lon, popupText) {
         const [lat1, lon1] = latlngs[latlngs.length - 1];
         if (Math.abs(lat1-lat) == 0 && (Math.abs(lon1-lon)%360 == 0))
         {
-            console.log('repeat pos ,continu')
+            // console.log('repeat pos ,continu')
             return;
         }
     }
@@ -68,8 +68,8 @@ export function addPathPoint(lat, lon, popupText) {
         }
         // 注意：此逻辑也适用于跨越0度经线的情况，因为它总是选择最短的经度路径
     }
-    console.log(lat,lon)
-    console.log(lat,adjustedLon)
+    // console.log(lat,lon)
+    // console.log(lat,adjustedLon)
 
     const point = [lat, adjustedLon];
     latlngs.push(point);
@@ -112,6 +112,6 @@ export function fitMapView() {
         map.setView(latlngs[0], 10); // 设置一个合适的缩放级别
     } else {
         // fitBounds 会自动计算合适的视图范围和缩放级别
-        map.fitBounds(polyline.getBounds(), { padding: [50, 50] }); // 增加一些边距
+        map.fitBounds(polyline.getBounds(), { padding: [100, 100] }); // 增加一些边距
     }
 }
